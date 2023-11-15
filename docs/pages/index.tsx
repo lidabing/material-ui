@@ -49,20 +49,6 @@ export default function Home() {
       <AppHeader />
       <main id="main-content">
         <Hero />
-        <References companies={CORE_CUSTOMERS} />
-        <Divider />
-        <ProductSuite />
-        <Divider />
-        <ValueProposition />
-        <Divider />
-        <DesignSystemComponents />
-        <Divider />
-        <Testimonials />
-        <Divider />
-        <Sponsors />
-        <Divider />
-        <HeroEnd />
-        <Divider />
       </main>
       <AppFooter />
     </BrandingCssVarsProvider>

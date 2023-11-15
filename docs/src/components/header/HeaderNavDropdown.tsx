@@ -2,11 +2,8 @@ import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Collapse from '@mui/material/Collapse';
-import Chip from '@mui/material/Chip';
 import { ClickAwayListener } from '@mui/base/ClickAwayListener';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import KeyboardArrowDownRounded from '@mui/icons-material/KeyboardArrowDownRounded';
 import SvgHamburgerMenu from 'docs/src/icons/SvgHamburgerMenu';
 import Link from 'docs/src/modules/components/Link';
 import ROUTES from 'docs/src/route';
@@ -54,73 +51,9 @@ const UList = styled('ul')({
   margin: 0,
 });
 
-const PRODUCTS = [
-  {
-    name: 'MUI Core',
-    description: 'Ready-to-use foundational React components, free forever.',
-    href: ROUTES.productCore,
-  },
-  {
-    name: 'MUI X',
-    description: 'Advanced and powerful components for complex use-cases.',
-    href: ROUTES.productAdvanced,
-  },
-  {
-    name: 'Templates',
-    description: 'Fully built, out-of-the-box, templates for your application.',
-    href: ROUTES.productTemplates,
-  },
-  {
-    name: 'Design kits',
-    description: 'Our components available in your favorite design tool.',
-    href: ROUTES.productDesignKits,
-  },
-  {
-    name: 'MUI Toolpad',
-    description: 'Low-code admin builder.',
-    href: ROUTES.productToolpad,
-    chip: 'Beta',
-  },
-];
-
-const DOCS = [
-  {
-    name: 'Material UI',
-    description: "React components that implement Google's Material Design.",
-    href: ROUTES.materialDocs,
-  },
-  {
-    name: 'Joy UI',
-    description: 'React components for building your design system.',
-    href: ROUTES.joyDocs,
-  },
-  {
-    name: 'Base UI',
-    description: 'Unstyled React components and low-level hooks.',
-    href: ROUTES.baseDocs,
-  },
-  {
-    name: 'MUI System',
-    description: 'CSS utilities for rapidly laying out custom designs.',
-    href: ROUTES.systemDocs,
-  },
-  {
-    name: 'MUI X',
-    description: 'Advanced and powerful components for complex use cases.',
-    href: ROUTES.advancedComponents,
-  },
-  {
-    name: 'MUI Toolpad',
-    description: 'Low-code admin builder.',
-    href: ROUTES.toolpadDocs,
-    chip: 'Beta',
-  },
-];
 
 export default function HeaderNavDropdown() {
   const [open, setOpen] = React.useState(false);
-  const [productsOpen, setProductsOpen] = React.useState(true);
-  const [docsOpen, setDocsOpen] = React.useState(false);
   const hambugerRef = React.useRef<HTMLButtonElement>(null);
   return (
     <React.Fragment>
@@ -190,121 +123,20 @@ export default function HeaderNavDropdown() {
                 },
               })}
             >
-              <li>
-                <Anchor
-                  as="button"
-                  onClick={() => setProductsOpen((bool) => !bool)}
-                  sx={{ justifyContent: 'space-between' }}
-                >
-                  Products
-                  <KeyboardArrowDownRounded
-                    color="primary"
-                    sx={{
-                      transition: '0.3s',
-                      transform: productsOpen ? 'rotate(-180deg)' : 'rotate(0)',
-                    }}
-                  />
-                </Anchor>
-                <Collapse in={productsOpen}>
-                  <UList>
-                    {PRODUCTS.map((item) => (
-                      <li key={item.name}>
-                        <Anchor
-                          href={item.href}
-                          as={Link}
-                          noLinkStyle
-                          sx={{ flexDirection: 'column', alignItems: 'initial' }}
-                        >
-                          <Box
-                            sx={{
-                              display: 'flex',
-                              flexDirection: 'row',
-                              justifyContent: 'space-between',
-                            }}
-                          >
-                            {item.name}
-                            {item.chip ? (
-                              <Chip
-                                size="small"
-                                label={item.chip}
-                                color="primary"
-                                variant="outlined"
-                              />
-                            ) : null}
-                          </Box>
-                          <Typography variant="body2" color="text.secondary">
-                            {item.description}
-                          </Typography>
-                        </Anchor>
-                      </li>
-                    ))}
-                  </UList>
-                </Collapse>
-              </li>
-              <li>
-                <Anchor
-                  as="button"
-                  onClick={() => setDocsOpen((bool) => !bool)}
-                  sx={{ justifyContent: 'space-between' }}
-                >
-                  Docs
-                  <KeyboardArrowDownRounded
-                    color="primary"
-                    sx={{
-                      transition: '0.3s',
-                      transform: docsOpen ? 'rotate(-180deg)' : 'rotate(0)',
-                    }}
-                  />
-                </Anchor>
-                <Collapse in={docsOpen}>
-                  <UList>
-                    {DOCS.map((item) => (
-                      <li key={item.name}>
-                        <Anchor
-                          href={item.href}
-                          as={Link}
-                          noLinkStyle
-                          sx={{ flexDirection: 'column', alignItems: 'initial' }}
-                        >
-                          <Box
-                            sx={{
-                              display: 'flex',
-                              flexDirection: 'row',
-                              justifyContent: 'space-between',
-                            }}
-                          >
-                            {item.name}
-                            {item.chip ? (
-                              <Chip
-                                size="small"
-                                label={item.chip}
-                                color="primary"
-                                variant="outlined"
-                              />
-                            ) : null}
-                          </Box>
-                          <Typography variant="body2" color="text.secondary">
-                            {item.description}
-                          </Typography>
-                        </Anchor>
-                      </li>
-                    ))}
-                  </UList>
-                </Collapse>
-              </li>
+       
               <li>
                 <Anchor href={ROUTES.pricing} as={Link} noLinkStyle>
-                  Pricing
+                  智能talk
                 </Anchor>
               </li>
               <li>
                 <Anchor href={ROUTES.about} as={Link} noLinkStyle>
-                  About us
+                  转债数据
                 </Anchor>
               </li>
               <li>
                 <Anchor href={ROUTES.blog} as={Link} noLinkStyle>
-                  Blog
+                  关于我们
                 </Anchor>
               </li>
             </UList>

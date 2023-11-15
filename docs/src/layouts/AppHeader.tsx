@@ -33,15 +33,8 @@ const Header = styled('header')(({ theme }) => [
 
 const HEIGHT = 60;
 
-interface AppHeaderProps {
-  gitHubRepository?: string;
-}
 
-export default function AppHeader(props: AppHeaderProps) {
-  const { gitHubRepository = 'https://github.com/mui' } = props;
-
-  const t = useTranslate();
-
+export default function AppHeader() {
   return (
     <Header>
       <GlobalStyles
@@ -60,20 +53,6 @@ export default function AppHeader(props: AppHeaderProps) {
         </Box>
         <Box sx={{ ml: 'auto' }} />
         <Stack direction="row" spacing={1}>
-          <DeferredAppSearch />
-          <Tooltip title={t('appFrame.github')} enterDelay={300}>
-            <IconButton
-              component="a"
-              color="primary"
-              href={gitHubRepository}
-              target="_blank"
-              rel="noopener"
-              data-ga-event-category="header"
-              data-ga-event-action="github"
-            >
-              <GitHubIcon fontSize="small" />
-            </IconButton>
-          </Tooltip>
           <ThemeModeToggle />
         </Stack>
         <Box sx={{ display: { md: 'none' }, ml: 1 }}>
