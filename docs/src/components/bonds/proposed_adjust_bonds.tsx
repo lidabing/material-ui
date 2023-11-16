@@ -16,7 +16,7 @@ export default function BasicTable() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:8000/api/upcoming_adjust_bonds');
+      const response = await axios.get('http://127.0.0.1:8000/api/proposed_adjust_bonds');
       const res = response.data.data
       setRows(res);
     } catch (error) {
@@ -31,16 +31,14 @@ export default function BasicTable() {
   return (
     <Container>
    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+      <Table sx={{ minWidth: 450 }} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
             <TableCell align="center">转债名称</TableCell>
             <TableCell align="center">代码</TableCell>
             <TableCell align="center">价格</TableCell>
             <TableCell align="center">溢价率</TableCell>
-            <TableCell align="center">下修计数日</TableCell>
-            <TableCell align="center">年化收益率</TableCell>
-            <TableCell align="center">剩余年限</TableCell>
+            <TableCell align="center">股东大会日期</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -55,9 +53,7 @@ export default function BasicTable() {
               <TableCell align="center">{row.bond_id}</TableCell>
               <TableCell align="center">{row.price}</TableCell>
               <TableCell align="center">{row.premium_rt}</TableCell>
-              <TableCell align="center">{row.adjust_count}</TableCell>
-              <TableCell align="center">{row.ytm_rt}</TableCell>
-              <TableCell align="center">{row.year_left}</TableCell>
+              <TableCell align="center">{row.adjust_date}</TableCell>
             </TableRow>
           ))}
         </TableBody>

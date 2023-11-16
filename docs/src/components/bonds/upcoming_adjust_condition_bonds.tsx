@@ -16,7 +16,7 @@ export default function BasicTable() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:8000/api/upcoming_adjust_bonds');
+      const response = await axios.get('http://127.0.0.1:8000/api/upcoming_adjust_condition_bonds');
       const res = response.data.data
       setRows(res);
     } catch (error) {

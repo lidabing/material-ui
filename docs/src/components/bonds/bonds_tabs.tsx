@@ -3,6 +3,9 @@ import { Tabs, Tab } from '@mui/material';
 import Section from 'docs/src/layouts/Section';
 import Container from '@mui/material/Container';
 import UpcomingAdjustBonds from './upcoming_adjust_bonds';
+import UpcomingAdjustConditionBonds from './upcoming_adjust_condition_bonds';
+import ProposedAdjustBonds from './proposed_adjust_bonds';
+import UpcomingBonds from './upcoming_bonds';
 
 
 function BondsTabs() {
@@ -23,7 +26,9 @@ function BondsTabs() {
         <Tab label="强赎|到期 预警" />
       </Tabs>
       {selectedTab === 0 && <UpcomingAdjustBonds />}
-      {selectedTab === 1 && <UpcomingAdjustBonds />}
+      {selectedTab === 1 && <UpcomingAdjustConditionBonds />}
+      {selectedTab === 2 && <ProposedAdjustBonds />}
+      {selectedTab === 3 && <UpcomingBonds />}
      </div>
      </Container>
   );
