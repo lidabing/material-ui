@@ -70,7 +70,7 @@ export default function HeaderNavBar() {
           <Link href={ROUTES.pricing}>智能talk</Link>
         </li>
         <li>
-          <Link href={ROUTES.about}>转债数据</Link>
+          <Link href={ROUTES.bondsData}>转债数据</Link>
         </li>
         <li>
           <Link href={ROUTES.blog}>关于我们</Link>

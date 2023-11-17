@@ -6,6 +6,7 @@ import UpcomingAdjustBonds from './upcoming_adjust_bonds';
 import UpcomingAdjustConditionBonds from './upcoming_adjust_condition_bonds';
 import ProposedAdjustBonds from './proposed_adjust_bonds';
 import UpcomingBonds from './upcoming_bonds';
+import ExpireBonds from './expire_bonds';
 
 
 function BondsTabs() {
@@ -29,6 +30,7 @@ function BondsTabs() {
       {selectedTab === 1 && <UpcomingAdjustConditionBonds />}
       {selectedTab === 2 && <ProposedAdjustBonds />}
       {selectedTab === 3 && <UpcomingBonds />}
+      {selectedTab === 4 && <ExpireBonds />}
      </div>
      </Container>
   );

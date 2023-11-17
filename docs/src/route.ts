@@ -9,6 +9,7 @@ const ROUTES = {
   careers: '/careers/',
   pricing: '/pricing/',
   about: '/about/',
+  bondsData: '/bonds-data/',
   rssFeed: '/feed/blog/rss.xml',
   handbook: 'https://mui-org.notion.site/Handbook-f086d47e10794d5e839aef9dc67f324b',
   baseDocs: '/base-ui/getting-started/',
